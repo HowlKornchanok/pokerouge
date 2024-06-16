@@ -109,10 +109,12 @@ export function loadRollScreen() {
     const button = document.getElementById("rollActionButton");
     button.disabled = true; // Disable the button when clicked
 
+    const eggGenerator = new EggGenerator();
     document.getElementById("generateEggButton").addEventListener("click", function () {
-        this.blur();
-        eggGenerator.execute(); 
-      });
+      this.blur();
+      eggGenerator.execute(); 
+    });
+
     try {
       const luck = parseInt(sanitizeAndStripPlaceholders(luckInput.value), 10);
       const money = parseInt(sanitizeAndStripPlaceholders(moneyInput.value), 10);
